@@ -49,5 +49,11 @@ void digitToStart(WordDescriptor word);
 void digitInWordShift(WordDescriptor word);
 void wordInStringProcessor(char *beginString, void(*f)(WordDescriptor));
 
+void digitInWordShift2(WordDescriptor word);
+void wordInStringProcessor2(char *beginString, void(*f)(WordDescriptor));
+void digitToStart2(WordDescriptor word);
+
+void convertNumToSpace(char *source);
+
 
 #endif

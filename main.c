@@ -109,9 +109,9 @@ void test() {
 
 int main() {
 
-    char s[] = "abcd21 w6v5j int7elkj9\0";
+    char s[MAX_STRING_SIZE] = "Hey3Hay3     Five4Seven\0n";
+    convertNumToSpace(s);
 
-    wordInStringProcessor(s, digitInWordShift);
     printf("%s", s);
 
     return 0;
