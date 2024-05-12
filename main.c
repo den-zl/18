@@ -109,9 +109,9 @@ void test() {
 
 int main() {
 
-    char s[] = "He l  L     o\0";
+    char s[] = "Halla\0";
 
-    removeNonLetters(s);
+    removeAdjacentEqualLetters(s);
     printf("%s", s);
 
     return 0;

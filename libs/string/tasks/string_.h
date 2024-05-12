@@ -34,5 +34,7 @@ void removeNonLetters(char *s);
 
 void assertString(const char *expected, char *got, char const *fileName, char const *funcName, int line);
 
+void removeAdjacentEqualLetters(char *s);
+
 
 #endif

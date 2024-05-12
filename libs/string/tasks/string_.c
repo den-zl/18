@@ -163,3 +163,21 @@ void assertString(const char *expected, char *got,
     } else
         fprintf(stderr, "%s - OK\n", funcName);
 }
+
+void removeAdjacentEqualLetters(char *s) {
+    char *endSource = getEndOfString(s);
+    char prev = *s;
+    char *dest = s;
+
+    for (char *i = s + sizeof(char); i <= endSource; i += sizeof(char)) {
+        if (*i != prev) {
+            *dest = prev;
+            dest += sizeof(char);
+            prev = *i;
+        }
+    }
+
+    *dest = *endSource;
+    dest += sizeof(char);
+    *dest = '\0';
+}
