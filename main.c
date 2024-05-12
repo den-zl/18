@@ -109,13 +109,10 @@ void test() {
 
 int main() {
 
-    char s[MAX_STRING_SIZE] = "abc abcd vfdj\0";
+    char s[MAX_STRING_SIZE] = "HelleH,Halaalah,gsffgs\0";
 
-    BagOfWords _bag;
-
-    clearBagOfWords(&_bag);
-    getBagOfWords(&_bag, s);
-    printBagOfWordsReverse(&_bag);
+    int res = getCountPalindroms(s);
+    printf("%d", res);
 
     return 0;
 }

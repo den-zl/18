@@ -72,5 +72,7 @@ void printBagOfWordsReverse(BagOfWords *bag);
 void printWord(const WordDescriptor *word);
 void clearBagOfWords(BagOfWords *bag);
 
+int getCountPalindroms(char *s);
+
 
 #endif
