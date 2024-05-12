@@ -2,7 +2,7 @@
 #define LAB_STRING__H
 
 #include <stdint.h>
-#include <string.h>
+
 
 size_t strlen_(const char *s);
 
@@ -24,6 +24,15 @@ int checkIfNotNum(int i);
 char* copyIf(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int));
 
 char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDestination, int (*f)(int));
+
+
+// -----------------------------   lab_17   -----------------------------
+
+
+char* getEndOfString(const char *begin);
+void removeNonLetters(char *s);
+
+void assertString(const char *expected, char *got, char const *fileName, char const *funcName, int line);
 
 
 #endif

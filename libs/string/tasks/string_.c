@@ -8,7 +8,7 @@
 size_t strlen_(const char *begin) {
     char *end = begin;
     while (*end != '\0')
-        end++;
+        end += sizeof(char);
     return end - begin;
 }
 
@@ -105,11 +105,11 @@ char* copy(const char *beginSource, const char *endSource, char *beginDestinatio
 }
 
 int checkIfNotNum(int i) {
-    return i != '4' && i != '6';
+    return i != ' ';
 }
 
 char* copyIf(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int)) {
-    for (char *i = beginSource; i < endSource; i += sizeof(char)) {
+    for (char *i = beginSource; i <= endSource; i += sizeof(char)) {
 
         if (f(*i)) {
             *beginDestination = *i;
@@ -132,4 +132,34 @@ char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDesti
 
     *beginDestination = '\0';
     return beginDestination;
+}
+
+
+
+// -----------------------------   lab_17   -----------------------------
+
+
+
+char* getEndOfString(const char *begin) {
+    char *end = begin;
+    while (*end != '\0')
+        end += sizeof(char);
+    return end - 1;
+}
+
+void removeNonLetters(char *s) {
+    char *endSource = getEndOfString(s);
+    char *destination = copyIf(s, endSource, s, isgraph);
+}
+
+void assertString(const char *expected, char *got,
+                  char const *fileName, char const *funcName,
+                  int line) {
+    if (strcmp_(expected, got)) {
+        fprintf(stderr, "File %s\n", fileName);
+        fprintf(stderr, "%s - failed on line %d\n", funcName, line);
+        fprintf(stderr, "Expected: \"%s\"\n", expected);
+        fprintf(stderr, "Got: \"%s\"\n\n", got);
+    } else
+        fprintf(stderr, "%s - OK\n", funcName);
 }

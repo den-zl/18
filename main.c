@@ -4,7 +4,7 @@
 #include "libs/data_structures/vector/vector.h"
 #include "libs/string/tasks/string_.h"
 
-size_t test_strlen_() {
+/* size_t test_strlen_() {
     char *s = "HelloSV";
 
     size_t res = strlen_(s);
@@ -104,11 +104,15 @@ void test() {
     test_copy();
     test_copyIf();
     test_copyIfReverse();
-}
+} */
 
 
 int main() {
-    test();
+
+    char s[] = "He l  L     o\0";
+
+    removeNonLetters(s);
+    printf("%s", s);
 
     return 0;
 }
