@@ -109,9 +109,9 @@ void test() {
 
 int main() {
 
-    char s[] = "Halla\0";
+    char s[] = "abcd21 w6v5j int7elkj9\0";
 
-    removeAdjacentEqualLetters(s);
+    wordInStringProcessor(s, digitInWordShift);
     printf("%s", s);
 
     return 0;
