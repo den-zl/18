@@ -109,8 +109,11 @@ void test() {
 
 int main() {
 
-    char s[MAX_STRING_SIZE] = "Hey3Hay3     Five4Seven\0n";
-    convertNumToSpace(s);
+    char s[MAX_STRING_SIZE] = "bye evening hello morning bye morning\0";
+    char w1[] = "morning";
+    char w2[] = "night";
+
+    replace(s, w1, w2);
 
     printf("%s", s);
 

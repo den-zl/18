@@ -55,5 +55,8 @@ void digitToStart2(WordDescriptor word);
 
 void convertNumToSpace(char *source);
 
+int findWord(char *beginSearch, WordDescriptor *patternWord, WordDescriptor *resWord);
+void replace(char *source, char *w1, char *w2);
+
 
 #endif
