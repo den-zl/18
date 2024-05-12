@@ -109,13 +109,11 @@ void test() {
 
 int main() {
 
-    char s1[MAX_STRING_SIZE] = "Hay Hello Hala Ecce Ea Ye\0";
-    char s2[MAX_STRING_SIZE] = "Bye B B Homo\0";
-    char res[MAX_STRING_SIZE];
+    char s1[MAX_STRING_SIZE] = "homo hala\0";
 
-    getInterleavedString(res, s1, s2);
+    getReversedString(s1);
 
-    printf("%s", res);
+    printf("%s", s1);
 
     return 0;
 }

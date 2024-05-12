@@ -76,5 +76,7 @@ int getCountPalindroms(char *s);
 
 void getInterleavedString(char *res, char *s1, char *s2);
 
+void getReversedString(char *s);
+
 
 #endif
