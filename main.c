@@ -109,10 +109,13 @@ void test() {
 
 int main() {
 
-    char s[MAX_STRING_SIZE] = "HelleH,Halaalah,gsffgs\0";
+    char s1[MAX_STRING_SIZE] = "Hay Hello Hala Ecce Ea Ye\0";
+    char s2[MAX_STRING_SIZE] = "Bye B B Homo\0";
+    char res[MAX_STRING_SIZE];
 
-    int res = getCountPalindroms(s);
-    printf("%d", res);
+    getInterleavedString(res, s1, s2);
+
+    printf("%s", res);
 
     return 0;
 }

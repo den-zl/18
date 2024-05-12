@@ -74,5 +74,7 @@ void clearBagOfWords(BagOfWords *bag);
 
 int getCountPalindroms(char *s);
 
+void getInterleavedString(char *res, char *s1, char *s2);
+
 
 #endif
