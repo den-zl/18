@@ -109,13 +109,13 @@ void test() {
 
 int main() {
 
-    char s[MAX_STRING_SIZE] = "bye evening hello morning bye morning\0";
-    char w1[] = "morning";
-    char w2[] = "night";
+    char s[MAX_STRING_SIZE] = "abc abcd vfdj\0";
 
-    replace(s, w1, w2);
+    BagOfWords _bag;
 
-    printf("%s", s);
+    clearBagOfWords(&_bag);
+    getBagOfWords(&_bag, s);
+    printBagOfWordsReverse(&_bag);
 
     return 0;
 }
