@@ -181,7 +181,7 @@ char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDesti
 
 
 
-// -----------------------------   lab_17   -----------------------------
+// -----------------------------   lab_18   -----------------------------
 
 
 
@@ -276,16 +276,6 @@ void wordInStringProcessor(char *beginString, void(*f)(WordDescriptor)) {
     }
 }
 
-void wordInStringProcessor2(char *beginString, void(*f)(WordDescriptor)) {
-    char *beginSearch = beginString;
-    WordDescriptor word;
-
-    while (getWord(beginSearch, &word)) {
-        f(word);
-        beginSearch = word.end;
-    }
-}
-
 
 void digitToStart(WordDescriptor word) {
     char *endStringBuffer = copy(word.begin, word.end,
@@ -299,10 +289,9 @@ void digitToStart(WordDescriptor word) {
 void digitToEnd(WordDescriptor word) {
     char *endStringBuffer = copy(word.begin, word.end,
                                  _stringBuffer);
-    char *recPosition = copyIfReverse(endStringBuffer - 1,
-                                      _stringBuffer - 1,
-                                      word.begin, isdigit);
-    copyIf2(_stringBuffer, endStringBuffer, recPosition, 0, isalpha);
+    char *recPosition = copyIf(_stringBuffer, endStringBuffer - 1, word.begin, isalpha);
+    copyIf(_stringBuffer, endStringBuffer - 1, recPosition, isdigit);
+    *word.end = ' ';
 }
 
 void convertNumToSpace(char *source) {
@@ -322,8 +311,6 @@ void convertNumToSpace(char *source) {
             recPtr += sizeof(char);
         }
     }
-
-    recPtr += sizeof(char);
     *recPtr = '\0';
 }
 
@@ -408,7 +395,7 @@ int isOrdered(char *source) {
         if (res > 0) {
             return 0;
         }
-        if (len1 > len2) {
+        if ((res == 0) && (len1 > len2)) {
             return 0;
         }
 
@@ -519,6 +506,7 @@ void getInterleavedString(char *res, char *s1, char *s2) {
             beginSearch2 = word2.end;
         }
     }
+    res -= sizeof(char);
     *res = '\0';
 }
 
@@ -537,6 +525,8 @@ void getReversedString(char *s) {
         *s = ' ';
         s += sizeof(char);
     }
+    s -= sizeof(char);
+    *s = '\0';
 }
 
 int hasWordLetter(WordDescriptor *word, char letter) {
@@ -711,6 +701,7 @@ void getStringWithoutEndWord(char *s) {
             s += sizeof(char);
         }
     }
+    s -= sizeof(char);
     *s = '\0';
 }
 
@@ -741,7 +732,7 @@ int getWordBeforeEqualWords(char *s1, char *s2, char *res) {
 
 
 void deletePalindromesInString(char *s) {
-    copy(s, getEndOfString(s), _stringBuffer);
+    copy(s, getEndOfString(s) + sizeof (char), _stringBuffer);
     clearBagOfWords(&_bag);
     getBagOfWords(&_bag, _stringBuffer);
 
@@ -757,6 +748,7 @@ void deletePalindromesInString(char *s) {
             s += sizeof(char);
         }
     }
+    s -= sizeof(char);
     *s = '\0';
 }
 

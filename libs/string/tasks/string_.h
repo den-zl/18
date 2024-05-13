@@ -29,7 +29,7 @@ char* copyIf2(char *beginSource, const char *endSource, char *beginDestination, 
 char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDestination, int (*f)(int));
 
 
-// -----------------------------   lab_17   -----------------------------
+// -----------------------------   lab_18   -----------------------------
 
 
 #define MAX_STRING_SIZE 200
@@ -71,7 +71,6 @@ void digitInWordShift(WordDescriptor word);
 void wordInStringProcessor(char *beginString, void(*f)(WordDescriptor));
 
 void digitInWordShift2(WordDescriptor word);
-void wordInStringProcessor2(char *beginString, void(*f)(WordDescriptor));
 void digitToEnd(WordDescriptor word);
 
 void convertNumToSpace(char *source);

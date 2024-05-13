@@ -323,6 +323,12 @@ build libs/string/CMakeFiles/string.dir/tasks/string_.c.o: C_COMPILER__string_un
   OBJECT_DIR = libs/string/CMakeFiles/string.dir
   OBJECT_FILE_DIR = libs/string/CMakeFiles/string.dir/tasks
 
+build libs/string/CMakeFiles/string.dir/tests/string_test.c.o: C_COMPILER__string_unscanned_Debug /Users/denzl/CLionProjects/2sem/19.18/lab_18/libs/string/tests/string_test.c || cmake_object_order_depends_target_string
+  DEP_FILE = libs/string/CMakeFiles/string.dir/tests/string_test.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = libs/string/CMakeFiles/string.dir
+  OBJECT_FILE_DIR = libs/string/CMakeFiles/string.dir/tests
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target string
@@ -331,7 +337,7 @@ build libs/string/CMakeFiles/string.dir/tasks/string_.c.o: C_COMPILER__string_un
 #############################################
 # Link the static library libs/string/libstring.a
 
-build libs/string/libstring.a: C_STATIC_LIBRARY_LINKER__string_Debug libs/string/CMakeFiles/string.dir/tasks/string_.c.o
+build libs/string/libstring.a: C_STATIC_LIBRARY_LINKER__string_Debug libs/string/CMakeFiles/string.dir/tasks/string_.c.o libs/string/CMakeFiles/string.dir/tests/string_test.c.o
   ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = libs/string/CMakeFiles/string.dir
