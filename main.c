@@ -134,9 +134,9 @@ void testAll_getWordBeforeFirstWordWithA() {
 
 int main() {
 
-    char s1[MAX_STRING_SIZE] = "SASFAS IYTKD hello\0";
-    char s2[MAX_STRING_SIZE] = "qwert rtyt hello dfds\0";
-    findLastWord(s1, s2);
+    char s[MAX_STRING_SIZE] = "helloo hala ha la hala\0";
+    int res = getCountEqualWordsInString(s);
+    printf("%d", res);
 
     return 0;
 }

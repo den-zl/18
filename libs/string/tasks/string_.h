@@ -97,5 +97,7 @@ WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(char *source, Wor
 
 void findLastWord(char *s1, char *s2);
 
+int getCountEqualWordsInString(char *s);
+
 
 #endif
