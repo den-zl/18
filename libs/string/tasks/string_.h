@@ -107,5 +107,7 @@ int getWordBeforeEqualWords(char *s1, char *s2, char *res);
 
 void deletePalindromesInString(char *s);
 
+void appendMissingWords(char *s1, char *s2);
+
 
 #endif

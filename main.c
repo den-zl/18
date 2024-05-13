@@ -134,11 +134,12 @@ void testAll_getWordBeforeFirstWordWithA() {
 
 int main() {
 
-    char s[MAX_STRING_SIZE] = "hala abcba hello bccb van0nav\0";
+    char s1[MAX_STRING_SIZE] = "denzl\0";
+    char s2[MAX_STRING_SIZE] = "not just do it\0";
 
-    deletePalindromesInString(s);
+    appendMissingWords(s1, s2);
 
-    printf("%s", s);
+    printf("%s", s1);
 
     return 0;
 }
