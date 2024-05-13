@@ -134,11 +134,15 @@ void testAll_getWordBeforeFirstWordWithA() {
 
 int main() {
 
-    char s[MAX_STRING_SIZE] = "hello olleh hala\0";
+    char s1[MAX_STRING_SIZE] = "hala hello commit first\0";
+    char s2[MAX_STRING_SIZE] = "get push master hello add\0";
+    char res[MAX_STRING_SIZE];
 
-    getStringWithoutEndWord(s);
+    int found = getWordBeforeEqualWords(s1, s2, res);
 
-    printf("%s", s);
+    if (found) {
+        printf("%s", res);
+    }
 
     return 0;
 }

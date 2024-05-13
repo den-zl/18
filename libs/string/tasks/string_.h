@@ -103,5 +103,7 @@ int hasWordsWithEqualLettersInString(char *s);
 
 void getStringWithoutEndWord(char *s);
 
+int getWordBeforeEqualWords(char *s1, char *s2, char *res);
+
 
 #endif
