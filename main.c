@@ -134,12 +134,12 @@ void testAll_getWordBeforeFirstWordWithA() {
 
 int main() {
 
-    char s1[MAX_STRING_SIZE] = "denzl\0";
-    char s2[MAX_STRING_SIZE] = "not just do it\0";
+    char s1[MAX_STRING_SIZE] = "Every day new zark lrk\0";
+    char s2[MAX_STRING_SIZE] = "denzl\0";
 
-    appendMissingWords(s1, s2);
+    int res = isStringIncludeLettersOfWord(s1, s2);
 
-    printf("%s", s1);
+    printf("%d", res);
 
     return 0;
 }

@@ -54,6 +54,7 @@ typedef enum WordBeforeFirstWordWithAReturnCode {
 
 
 extern char _stringBuffer[MAX_STRING_SIZE + 1];
+
 extern BagOfWords _bag;
 extern BagOfWords _bag2;
 
@@ -108,6 +109,8 @@ int getWordBeforeEqualWords(char *s1, char *s2, char *res);
 void deletePalindromesInString(char *s);
 
 void appendMissingWords(char *s1, char *s2);
+
+int isStringIncludeLettersOfWord(char *s, char *word);
 
 
 #endif
