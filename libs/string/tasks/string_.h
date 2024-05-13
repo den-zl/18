@@ -1,6 +1,8 @@
 #ifndef LAB_STRING__H
 #define LAB_STRING__H
 
+#define ASSERT_STRING(expected, got) assertString(expected, got, __FILE__, __FUNCTION__, __LINE__)
+
 #include <stdint.h>
 
 
@@ -12,9 +14,9 @@ char* findNonSpace(char *begin);
 
 char* findSpace(char *begin);
 
-char* findNonSpaceReverse(char *rbegin, const char *rend);
+char* findNonSpaceReverse(char *rbegin, char *rend);
 
-char* findSpaceReverse(char *rbegin, const char *rend);
+char* findSpaceReverse(char *rbegin, char *rend);
 
 int strcmp_(const char *lhs, const char *rhs);
 
@@ -43,8 +45,19 @@ typedef struct BagOfWords {
     size_t size;
 } BagOfWords;
 
+typedef enum WordBeforeFirstWordWithAReturnCode {
+    FIRST_WORD_WITH_A,
+    NOT_FOUND_A_WORD_WITH_A,
+    WORD_FOUND,
+    EMPTY_STRING
+} WordBeforeFirstWordWithAReturnCode;
 
-char* getEndOfString(const char *begin);
+
+extern char _stringBuffer[MAX_STRING_SIZE + 1];
+extern BagOfWords _bag;
+extern BagOfWords _bag2;
+
+char* getEndOfString(char *begin);
 void removeNonLetters(char *s);
 
 void assertString(const char *expected, char *got, char const *fileName, char const *funcName, int line);
@@ -58,7 +71,7 @@ void wordInStringProcessor(char *beginString, void(*f)(WordDescriptor));
 
 void digitInWordShift2(WordDescriptor word);
 void wordInStringProcessor2(char *beginString, void(*f)(WordDescriptor));
-void digitToStart2(WordDescriptor word);
+void digitToEnd(WordDescriptor word);
 
 void convertNumToSpace(char *source);
 
@@ -77,6 +90,10 @@ int getCountPalindroms(char *s);
 void getInterleavedString(char *res, char *s1, char *s2);
 
 void getReversedString(char *s);
+
+int hasWordLetter(WordDescriptor *word, char letter);
+void printWordBeforeFirstWordWithA (char *s);
+WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(char *source, WordDescriptor *w);
 
 
 #endif
