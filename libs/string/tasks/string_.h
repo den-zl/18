@@ -105,5 +105,7 @@ void getStringWithoutEndWord(char *s);
 
 int getWordBeforeEqualWords(char *s1, char *s2, char *res);
 
+void deletePalindromesInString(char *s);
+
 
 #endif

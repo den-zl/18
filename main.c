@@ -134,15 +134,11 @@ void testAll_getWordBeforeFirstWordWithA() {
 
 int main() {
 
-    char s1[MAX_STRING_SIZE] = "hala hello commit first\0";
-    char s2[MAX_STRING_SIZE] = "get push master hello add\0";
-    char res[MAX_STRING_SIZE];
+    char s[MAX_STRING_SIZE] = "hala abcba hello bccb van0nav\0";
 
-    int found = getWordBeforeEqualWords(s1, s2, res);
+    deletePalindromesInString(s);
 
-    if (found) {
-        printf("%s", res);
-    }
+    printf("%s", s);
 
     return 0;
 }
