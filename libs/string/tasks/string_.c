@@ -400,7 +400,7 @@ int isOrdered(char *source) {
             min_len = len2;
         }
 
-        int res = memcmp(prevWordRes.begin, wordRes.begin, len1);
+        int res = memcmp(prevWordRes.begin, wordRes.begin, min_len);
 
         if (res > 0) {
             return 0;
@@ -580,3 +580,30 @@ void printWordBeforeFirstWordWithA(char *s) {
     }
 }
 
+
+void findLastWord(char *s1, char *s2) {
+    clearBagOfWords(&_bag);
+    clearBagOfWords(&_bag2);
+    getBagOfWords(&_bag, s1);
+    getBagOfWords(&_bag2, s2);
+
+    size_t len1 = 0;
+    size_t len2 = 0;
+
+    for (int i = _bag.size - 1; i >= 0; i--) {
+        for (int j = _bag2.size - 1; j >= 0; j--) {
+            len1 = &_bag.words[i].end - &_bag.words[i].begin;
+            len2 = &_bag2.words[j].end - &_bag2.words[j].begin;
+
+            if (len1 != len2) {
+                continue;
+            }
+
+            int res = memcmp(_bag.words[i].begin, _bag2.words[j].begin, len1);
+
+            if (res == 0) {
+                printWord(&_bag.words[i]);
+            }
+        }
+    }
+}

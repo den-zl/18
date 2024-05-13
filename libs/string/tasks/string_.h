@@ -95,5 +95,7 @@ int hasWordLetter(WordDescriptor *word, char letter);
 void printWordBeforeFirstWordWithA (char *s);
 WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(char *source, WordDescriptor *w);
 
+void findLastWord(char *s1, char *s2);
+
 
 #endif

@@ -134,11 +134,9 @@ void testAll_getWordBeforeFirstWordWithA() {
 
 int main() {
 
-    testAll_getWordBeforeFirstWordWithA();
-
-    char s[MAX_STRING_SIZE] = "\0";
-
-    printWordBeforeFirstWordWithA(s);
+    char s1[MAX_STRING_SIZE] = "SASFAS IYTKD hello\0";
+    char s2[MAX_STRING_SIZE] = "qwert rtyt hello dfds\0";
+    findLastWord(s1, s2);
 
     return 0;
 }
