@@ -101,5 +101,7 @@ int getCountEqualWordsInString(char *s);
 
 int hasWordsWithEqualLettersInString(char *s);
 
+void getStringWithoutEndWord(char *s);
+
 
 #endif

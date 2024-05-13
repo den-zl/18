@@ -674,3 +674,24 @@ int hasWordsWithEqualLettersInString(char *s) {
     }
     return 0;
 }
+
+
+void getStringWithoutEndWord(char *s) {
+    copy(s, getEndOfString(s), _stringBuffer);
+    clearBagOfWords(&_bag);
+    getBagOfWords(&_bag, _stringBuffer);
+    WordDescriptor lastWord = _bag.words[_bag.size - 1];
+
+    for (int i = 0; i < _bag.size - 1; i++) {
+        WordDescriptor currWord = _bag.words[i];
+        int res = compareWordDescriptors(&currWord, &lastWord);
+
+        if (res != 0) {
+            copy(currWord.begin, currWord.end, s);
+            s += currWord.end - currWord.begin;
+            *s = ' ';
+            s += sizeof(char);
+        }
+    }
+    *s = '\0';
+}

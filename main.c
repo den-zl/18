@@ -134,11 +134,11 @@ void testAll_getWordBeforeFirstWordWithA() {
 
 int main() {
 
-    char s[MAX_STRING_SIZE] = "hello olleh h e l l o\0";
+    char s[MAX_STRING_SIZE] = "hello olleh hala\0";
 
-    int res = hasWordsWithEqualLettersInString(s);
+    getStringWithoutEndWord(s);
 
-    printf("%d", res);
+    printf("%s", s);
 
     return 0;
 }
