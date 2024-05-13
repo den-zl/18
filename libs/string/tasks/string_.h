@@ -99,5 +99,7 @@ void findLastWord(char *s1, char *s2);
 
 int getCountEqualWordsInString(char *s);
 
+int hasWordsWithEqualLettersInString(char *s);
+
 
 #endif
